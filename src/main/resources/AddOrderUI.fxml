@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.util.Callback?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rms.ui.AddOrderUIController">
+
+    <children>
+        <VBox prefHeight="84.0" prefWidth="1371.0" style="-fx-background-color: #FF8000;">
+            <children>
+                <Label alignment="CENTER" prefHeight="53.0" prefWidth="509.0" text="Prise de commandes" textAlignment="CENTER" textFill="WHITE">
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </VBox.margin>
+                </Label>
+            </children>
+        </VBox>
+        <VBox layoutX="626.0" layoutY="90.0" prefHeight="369.0" prefWidth="733.0">
+            <children>
+                <TableView fx:id="dataGridViewProducts" editable="false" prefHeight="369.0" prefWidth="733.0">
+                    <columns>
+                        <TableColumn fx:id="id" prefWidth="75.0" text="Id" />
+                        <TableColumn fx:id="nom" prefWidth="150.0" text="Nom" />
+                        <TableColumn fx:id="quantite" prefWidth="75.0" text="Quantité" />
+                        <TableColumn fx:id="prix" prefWidth="75.0" text="Prix" />
+                        <TableColumn fx:id="total" prefWidth="75.0" text="Total">
+                            <cellFactory>
+                                <Callback>
+                                    <!-- Define your cell factory here -->
+                                </Callback>
+                            </cellFactory>
+                        </TableColumn>
+                    </columns>
+                </TableView>
+                <HBox alignment="CENTER" spacing="10.0">
+                    <Button fx:id="cancelButton" minWidth="156.0" minHeight="49.0" style="-fx-background-color: #FF0000; -fx-text-fill: WHITE;" text="Annuler" />
+                    <Button fx:id="btnSaveOrder" minWidth="156.0" minHeight="49.0" style="-fx-background-color: #047FEE; -fx-text-fill: WHITE;" text="Enregistrer" />
+                </HBox>
+            </children>
+        </VBox>
+        <VBox layoutY="465.0" prefHeight="326.0" prefWidth="1371.0">
+            <children>
+                <TableView fx:id="orderdataGridView" editable="false" prefHeight="236.0" prefWidth="884.0">
+                    <columns>
+                        <TableColumn fx:id="orderreference" prefWidth="200.0" text="Référence commande" />
+                        <TableColumn fx:id="date" prefWidth="200.0" text="Date" />
+                        <TableColumn fx:id="totalprice" prefWidth="200.0" text="Prix Total" />
+                    </columns>
+                </TableView>
+                <HBox alignment="CENTER" spacing="10.0">
+                    <Button fx:id="cancelOrderBtn" minWidth="171.0" minHeight="47.0" style="-fx-background-color: #FFC080; -fx-text-fill: WHITE;" text="Annuler" />
+                    <Button fx:id="payOrderBtn" minWidth="171.0" minHeight="47.0" style="-fx-background-color: #00FF00; -fx-text-fill: WHITE;" text="Payer" />
+                </HBox>
+            </children>
+        </VBox>
+        <VBox layoutX="0.0" layoutY="90.0" prefHeight="369.0" prefWidth="620.0">
+            <children>
+                <HBox alignment="CENTER" spacing="10.0">
+                    <Label text="Produits" />
+                    <ComboBox fx:id="comboBoxProducts" prefWidth="254.0">
+                        <HBox.margin>
+                            <Insets />
+                        </HBox.margin>
+                    </ComboBox>
+                </HBox>
+                <HBox alignment="CENTER" spacing="10.0">
+                    <Label text="Quantité" />
+                    <TextField fx:id="numericUpDownQuantity" prefWidth="100.0" />
+                </HBox>
+                <HBox alignment="CENTER" spacing="10.0">
+                    <Label text="Date" />
+                    <DatePicker fx:id="dateTimePicker1" prefWidth="336.0" />
+                </HBox>
+                <HBox alignment="CENTER" spacing="10.0">
+                    <Button fx:id="btnAddProduct" minWidth="171.0" minHeight="47.0" style="-fx-background-color: #000080; -fx-text-fill: WHITE;" text="Ajouter" />
+                    <Button fx:id="button4" minWidth="171.0" minHeight="47.0" style="-fx-background-color: #FFC080; -fx-text-fill: WHITE;" text="Effacer" />
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

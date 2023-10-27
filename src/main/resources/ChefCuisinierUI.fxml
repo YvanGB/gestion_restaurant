@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="main_form" prefHeight="612.0" prefWidth="1086.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rms.ui.ChefUIController">
+   <children>
+      <AnchorPane prefHeight="62.0" prefWidth="1086.0">
+         <children>
+            <AnchorPane prefHeight="62.4" prefWidth="1086.4" style="-fx-background-color: #ff944d;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label graphicTextGap="5.0" layoutX="67.0" layoutY="21.0" text="Restaurant management system" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="71.0" prefHeight="547.0" prefWidth="220.0">
+         <children>
+            <AnchorPane layoutY="-8.0" prefHeight="555.0" prefWidth="220.0" style="-fx-background-color: #ff944d;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-8.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="35.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Chef-amico.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="67.0" layoutY="203.0" prefHeight="20.0" prefWidth="92.0" text="Bienvenue," textFill="WHITE">
+                     <font>
+                        <Font name="Roboto" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="85.0" layoutY="242.0" text="Chef" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Line endX="37.19999694824219" layoutX="141.0" layoutY="290.0" startX="-100.0" stroke="WHITE" strokeWidth="5.0" />
+                  <Label fx:id="logoutBtn" layoutX="57.0" layoutY="443.0" text="Déconnexion" textFill="WHITE">
+                     <font>
+                        <Font name="Tahoma Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="signoutBtn" layoutX="13.0" layoutY="439.0" mnemonicParsing="false" onAction="#logout" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color: df620f; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 6,0,0,0);" textFill="#df620f">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" size="2em" strokeType="OUTSIDE" strokeWidth="0.0" />
+                     </graphic></Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="updatePage" layoutX="220.0" layoutY="62.0" prefHeight="530.0" prefWidth="711.0">
+         <children>
+            <AnchorPane layoutX="75.0" layoutY="55.0" prefHeight="555.0" prefWidth="864.0" AnchorPane.bottomAnchor="-25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-153.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane fx:id="usersTableAnchor" layoutX="12.0" layoutY="10.0" prefHeight="530.0" prefWidth="843.0" style="-fx-background-color: white; -fx-background-radius: 8;">
+                     <children>
+                        <AnchorPane layoutX="7.0" layoutY="14.0" prefHeight="298.0" prefWidth="668.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 6,0,0,0);">
+                           <children>
+                              <TableView fx:id="productsTable" layoutX="9.0" layoutY="60.0" prefHeight="234.0" prefWidth="809.0" style="-fx-border-radius: 8;">
+                                 <columns>
+                                    <TableColumn fx:id="idCol" prefWidth="72.0" text="ID" />
+                                    <TableColumn fx:id="nomCol" prefWidth="162.4000244140625" text="Nom" />
+                                    <TableColumn fx:id="categorieCol" prefWidth="137.5999755859375" text="Catégorie" />
+                                    <TableColumn fx:id="prixCol" prefWidth="92.0" text="Prix" />
+                                    <TableColumn fx:id="qteCol" prefWidth="94.0" text="Quantité" />
+                                    <TableColumn fx:id="dateCol" editable="false" prefWidth="107.5999755859375" text="Date" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <TextField fx:id="searchField" layoutX="14.0" layoutY="21.0" onAction="#searchProduct" prefHeight="26.0" prefWidth="279.0" promptText="Rechercher" style="-fx-padding: 0 0 0 28;">
+                                 <font>
+                                    <Font name="Roboto" size="14.0" />
+                                 </font>
+                              </TextField>
+                              <FontAwesomeIcon glyphName="SEARCH" layoutX="21.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <Label layoutX="14.0" layoutY="337.0" text="ID Produit">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="380.0" text="Nom:">
+                           <font>
+                              <Font name="Roboto" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="360.0" layoutY="423.0" text="Prix: ">
+                           <font>
+                              <Font name="Roboto" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="331.0" layoutY="338.0">
+                           <font>
+                              <Font name="Roboto" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="348.0" layoutY="337.0" text="Catégorie:">
+                           <font>
+                              <Font name="Roboto" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="idProductField" editable="false" layoutX="109.0" layoutY="333.0" prefHeight="26.0" prefWidth="175.0" />
+                        <TextField fx:id="nomProductField" layoutX="109.0" layoutY="375.0" prefHeight="26.0" prefWidth="175.0" />
+                        <TextField fx:id="prixProductField" layoutX="427.0" layoutY="419.0" prefHeight="26.0" prefWidth="175.0" promptText="0 Fcfa" />
+                        <ComboBox fx:id="categorieComboBox" layoutX="425.0" layoutY="333.0" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #efeeee;" />
+                        <Button fx:id="addProductBtn" alignment="CENTER" layoutX="109.0" layoutY="479.0" mnemonicParsing="false" onAction="#addProduct" prefHeight="28.0" prefWidth="92.0" style="-fx-background-color: #0aec42;" text="Ajouter" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="updateProductBtn" alignment="CENTER" layoutX="225.0" layoutY="479.0" mnemonicParsing="false" onAction="#updateProduct" prefHeight="28.0" prefWidth="92.0" style="-fx-background-color: #0ccbec;" text="Modifier" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="deleteProductBtn" alignment="CENTER" layoutX="340.0" layoutY="479.0" mnemonicParsing="false" onAction="#deleteProduct" prefHeight="28.0" prefWidth="92.0" style="-fx-background-color: #fc1900;" text="Supprimer" textFill="#fffffffa">
+                           <font>
+                              <Font name="Roboto" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="clearFieldBtn" alignment="CENTER" layoutX="452.0" layoutY="479.0" mnemonicParsing="false" onAction="#clearFields" prefHeight="28.0" prefWidth="92.0" style="-fx-background-color: #d78305;" text="Effacer" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto" size="14.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="350.0" layoutY="381.0" text="Quantité:">
+                           <font>
+                              <Font name="Roboto" size="14.0" />
+                           </font></Label>
+                        <AnchorPane layoutX="683.0" layoutY="326.0" prefHeight="150.0" prefWidth="113.0" style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 6,0,0,0); -fx-background-radius: 5;">
+                           <children>
+                              <ImageView fx:id="productImage" fitHeight="150.0" fitWidth="114.0" pickOnBounds="true" preserveRatio="true" />
+                              <Button fx:id="imgImportBtn" layoutY="125.0" mnemonicParsing="false" onAction="#importImage" prefHeight="26.0" prefWidth="114.0" style="-fx-background-color: limegreen;" text="Import" textFill="WHITE">
+                                 <font>
+                                    <Font name="Roboto" size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                        <Label layoutX="14.0" layoutY="427.0" text="Description:">
+                           <font>
+                              <Font name="Roboto" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="descriptionProductField" layoutX="109.0" layoutY="419.0" prefHeight="26.0" prefWidth="175.0" />
+                        <TextField fx:id="quantiteProductField" layoutX="427.0" layoutY="375.0" prefHeight="26.0" prefWidth="175.0" promptText="1" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

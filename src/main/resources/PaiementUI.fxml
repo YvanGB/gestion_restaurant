@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="579.0" prefWidth="527.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rms.ui.PaiementUIController">
+   <children>
+      <Pane prefHeight="79.0" prefWidth="531.0" style="-fx-background-color: orange;">
+         <children>
+            <Label layoutX="180.0" layoutY="24.0" text="Régler la facture" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="31.0" layoutY="169.0" prefHeight="19.0" prefWidth="195.0" text="Montant de la commande:">
+         <font>
+            <Font name="Segoe UI" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="240.0" prefHeight="19.0" prefWidth="142.0" text="Montant encaissé:">
+         <font>
+            <Font name="Segoe UI" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="311.0" prefHeight="19.0" prefWidth="88.0" text="Reliquat:">
+         <font>
+            <Font name="Segoe UI" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="montantEnc" layoutX="226.0" layoutY="237.0" prefHeight="26.0" prefWidth="195.0" promptText="0 fcfa">
+         <font>
+            <Font name="Segoe UI Bold" size="14.0" />
+         </font></TextField>
+      <Label fx:id="montantCom" layoutX="249.0" layoutY="165.0" prefHeight="26.0" prefWidth="127.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="montantRest" layoutX="234.0" layoutY="307.0" prefHeight="26.0" prefWidth="142.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="388.0" prefHeight="26.0" prefWidth="170.0" text="Numéro de paiement: ">
+         <font>
+            <Font name="Segoe UI" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="refPaiement" layoutX="219.0" layoutY="388.0" prefHeight="26.0" prefWidth="188.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="461.0" prefHeight="26.0" prefWidth="96.0" text="Date:">
+         <font>
+            <Font name="Segoe UI" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="datePaiement" layoutX="219.0" layoutY="461.0" prefHeight="26.0" prefWidth="188.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="validPaiementBtn" layoutX="153.0" layoutY="517.0" mnemonicParsing="false" onAction="#addPaiement" prefHeight="32.0" prefWidth="96.0" style="-fx-background-color: limegreen;" text="Valider" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="cancelPaiementBtn" layoutX="294.0" layoutY="517.0" mnemonicParsing="false" onAction="#cancelPaiement" prefHeight="32.0" prefWidth="96.0" style="-fx-background-color: orange;" text="Annuler" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="31.0" layoutY="114.0" prefHeight="19.0" prefWidth="127.0" text="ID commande:">
+         <font>
+            <Font name="Segoe UI" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="idCom" layoutX="219.0" layoutY="110.0" prefHeight="26.0" prefWidth="142.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="679.0" prefWidth="1288.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rms.ui.CommandesUIController">
+    <children>
+      <AnchorPane layoutY="75.0" prefHeight="633.0" prefWidth="232.0" style="-fx-background-color: #ff944d;">
+         <children>
+            <ImageView fitHeight="182.0" fitWidth="199.0" layoutX="25.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/restaurateur.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="77.0" layoutY="225.0" prefHeight="20.0" prefWidth="92.0" text="Bienvenue," textFill="WHITE">
+               <font>
+                  <Font name="Roboto" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="63.0" layoutY="264.0" text="Restaurateur" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Bold" size="18.0" />
+               </font>
+            </Label>
+            <Line endX="43.99998474121094" fill="WHITE" layoutX="143.0" layoutY="315.0" startX="-100.0" stroke="WHITE" strokeWidth="5.0" />
+            <Button fx:id="logoutBtn" layoutX="13.0" layoutY="538.0" mnemonicParsing="false" onAction="#logout" prefHeight="34.0" prefWidth="42.0" style="-fx-background-color: #df620f; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 6,0,0,0);">
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" size="2em" strokeType="OUTSIDE" strokeWidth="0.0" />
+               </graphic></Button>
+            <Label layoutX="65.0" layoutY="547.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 6,0,0,0);" text="Déconnexion" textFill="WHITE">
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="paymentListBtn" layoutX="10.0" layoutY="402.0" mnemonicParsing="false" onAction="#switchTab" prefHeight="31.0" prefWidth="210.0" style="-fx-background-color: #ff944d; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 6,0,0,0);" text="Paiements" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="manageComBtn" layoutX="9.0" layoutY="338.0" mnemonicParsing="false" onAction="#switchTab" prefHeight="31.0" prefWidth="210.0" style="-fx-background-color: #ff944d; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 6,0,0,0);" text="Gérer les commandes" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="recettesBtn" layoutX="6.0" layoutY="467.0" mnemonicParsing="false" onAction="#switchTab" prefHeight="31.0" prefWidth="210.0" style="-fx-background-color: #ff944d; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 6,0,0,0);" text="Suivi des recettes" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="75.0" prefWidth="1288.0" style="-fx-background-color: #ff944d;">
+         <children>
+            <Label layoutX="104.0" layoutY="28.0" text="Restaurant Management System" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Bold" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Pane layoutX="824.0" layoutY="435.0" prefHeight="26.0" prefWidth="450.0" style="-fx-background-color: #047fee;" visible="false">
+         <children>
+            <Label layoutX="94.0" layoutY="4.0" text="Liste des produits de la commande" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <AnchorPane fx:id="baseAnchorPane" layoutX="241.0" layoutY="82.0" prefHeight="626.0" prefWidth="1040.0">
+         <children>
+            <Pane layoutX="570.0" layoutY="18.0" prefHeight="26.0" prefWidth="450.0" style="-fx-background-color: #047fee;">
+               <children>
+                  <Label layoutX="150.0" layoutY="4.0" text="Commande à passer" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="23.0" layoutY="18.0" prefHeight="26.0" prefWidth="512.0" style="-fx-background-color: #047fee;">
+               <children>
+                  <Label layoutX="145.0" layoutY="4.0" text="Liste des produits disponibles" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Button fx:id="payBtn" layoutX="918.0" layoutY="491.0" mnemonicParsing="false" onAction="#openPayment" prefHeight="28.0" prefWidth="106.0" style="-fx-background-color: limegreen;" text="Payer" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="14.0" />
+               </font>
+            </Button>
+            <Pane layoutX="54.0" layoutY="363.0" prefHeight="26.0" prefWidth="846.0" style="-fx-background-color: #047fee;">
+               <children>
+                  <Label layoutX="343.0" layoutY="4.0" text="Liste des commandes" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <TableView fx:id="tableCommandes" layoutX="54.0" layoutY="390.0" prefHeight="230.0" prefWidth="846.0">
+               <columns>
+                  <TableColumn fx:id="idComCol" prefWidth="90.4000244140625" text="ID Commande" />
+                  <TableColumn fx:id="montantComCol" prefWidth="112.79998779296875" text="Montant" />
+                  <TableColumn fx:id="produitsComCol" prefWidth="311.199951171875" text="Produits" />
+                  <TableColumn fx:id="dateComCol" minWidth="0.0" prefWidth="215.20001220703125" text="Date" />
+                  <TableColumn fx:id="paymentComCol" minWidth="0.0" prefWidth="114.39999999999998" text="Paiements" />
+               </columns>
+            </TableView>
+            <TableView fx:id="productsTable" layoutX="23.0" layoutY="44.0" prefHeight="250.0" prefWidth="512.0">
+               <columns>
+                  <TableColumn fx:id="idProdCol" prefWidth="107.20001220703125" text="ID Produit" />
+                  <TableColumn fx:id="nomProdCol" prefWidth="172.79998779296875" text="Nom Produit" />
+                  <TableColumn fx:id="priceProdCol" prefWidth="133.5999755859375" text="Prix" />
+                  <TableColumn fx:id="qteProdCol" text="Quantité" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <TableView fx:id="ordersTable" layoutX="570.0" layoutY="44.0" prefHeight="250.0" prefWidth="450.0">
+               <columns>
+                  <TableColumn fx:id="idOrdCol" text="ID Commande" />
+                  <TableColumn fx:id="productOrdCol" text="Produit" />
+                  <TableColumn fx:id="qteOrdCol" text="Quantité" />
+                  <TableColumn fx:id="totalOrdCol" text="Total" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <Button fx:id="addItemBtn" layoutX="237.0" layoutY="304.0" mnemonicParsing="false" onAction="#addItem" style="-fx-background-color: limegreen;" text="Ajouter produit" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="removeItemBtn" layoutX="640.0" layoutY="304.0" mnemonicParsing="false" onAction="#removeItem" style="-fx-background-color: red;" text="Supprimer produit" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="confirmOrderBtn" layoutX="817.0" layoutY="303.0" mnemonicParsing="false" onAction="#confirmOrder" style="-fx-background-color: limegreen;" text="Confirmer Commande" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Bold" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="paymentListAnchor" layoutX="245.0" layoutY="106.0" prefHeight="570.0" prefWidth="1030.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 6,0,0,0);" visible="false">
+         <children>
+            <TableView fx:id="paymentsTable" layoutX="32.0" layoutY="84.0" prefHeight="400.0" prefWidth="983.0">
+              <columns>
+                <TableColumn fx:id="idPaidCol" prefWidth="110.39999389648438" text="#" />
+                <TableColumn fx:id="refPaidCol" prefWidth="240.79998779296875" text="Référence paiement" />
+                  <TableColumn fx:id="amountPaidCol" prefWidth="179.199951171875" text="Montant " />
+                  <TableColumn fx:id="reliquatPaidCol" prefWidth="190.4000244140625" text="Reliquat" />
+                  <TableColumn fx:id="datePaidCol" prefWidth="185.5999755859375" text="Date" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>

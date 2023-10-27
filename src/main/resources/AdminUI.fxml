@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="595.0" prefWidth="931.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rms.ui.AdminDashController">
+   <children>
+      <AnchorPane prefHeight="62.0" prefWidth="931.0">
+         <children>
+            <AnchorPane prefHeight="62.0" prefWidth="931.0" style="-fx-background-color: #ff944d;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label graphicTextGap="5.0" layoutX="67.0" layoutY="21.0" text="Restaurant management system" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto" size="17.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+         </children></AnchorPane>
+      <AnchorPane layoutY="71.0" prefHeight="524.0" prefWidth="220.0">
+         <children>
+            <AnchorPane layoutY="-6.0" prefHeight="482.0" prefWidth="220.0" style="-fx-background-color: #ff944d;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-6.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="35.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/Working-rafiki-3.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="80.0" layoutY="187.0" prefWidth="70.0" text="Bienvenue," textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label layoutX="86.0" layoutY="212.0" text="Admin" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Line endX="37.19999694824219" layoutX="141.0" layoutY="246.0" startX="-100.0" stroke="WHITE" />
+                  <Button fx:id="menuAddUserBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="7.0" layoutY="290.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="34.0" prefWidth="208.0" style="-fx-background-color: #ff944d; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 6,0,0,0);" text="Accueil" textFill="WHITE">
+                     <font>
+                        <Font name="Tahoma Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="64.0" layoutY="447.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 6,0,0,0);" text="Déconnexion" textFill="WHITE">
+                     <font>
+                        <Font name="Tahoma Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="logoutBtn" alignment="CENTER" layoutX="13.0" layoutY="439.0" mnemonicParsing="false" onAction="#logOut" prefHeight="34.0" prefWidth="38.0" style="-fx-background-color: df620f; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 6,0,0,0);" textFill="#df620f" />
+                  <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" layoutX="22.0" layoutY="464.0" size="2em" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="11.142857551574707" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="updatePage" layoutX="220.0" layoutY="62.0" prefHeight="530.0" prefWidth="711.0">
+         <children>
+            <AnchorPane layoutX="75.0" layoutY="55.0" prefHeight="437.6" prefWidth="711.0" AnchorPane.bottomAnchor="-22.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane fx:id="usersTableAnchor" layoutX="12.0" layoutY="10.0" prefHeight="514.0" prefWidth="687.0" style="-fx-background-color: white; -fx-background-radius: 8;">
+                     <children>
+                        <AnchorPane layoutX="7.0" layoutY="14.0" prefHeight="298.0" prefWidth="668.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 6,0,0,0);">
+                           <children>
+                              <TableView fx:id="usersTable" layoutX="9.0" layoutY="60.0" prefHeight="223.0" prefWidth="650.0" style="-fx-border-radius: 8;">
+                                <columns>
+                                  <TableColumn fx:id="idCol" prefWidth="72.0" text="ID" />
+                                  <TableColumn fx:id="nomCol" prefWidth="125.0" text="Nom" />
+                                    <TableColumn fx:id="prenomCol" prefWidth="126.4000244140625" text="Prénom" />
+                                    <TableColumn fx:id="loginCol" prefWidth="113.20001220703125" text="Login" />
+                                    <TableColumn fx:id="roleCol" prefWidth="103.5999755859375" text="Role" />
+                                    <TableColumn fx:id="passwordCol" editable="false" prefWidth="109.60001220703123" text="Mot de passe" />
+                                </columns>
+                              </TableView>
+                              <TextField fx:id="searchField" layoutX="14.0" layoutY="21.0" onAction="#searchUser" prefHeight="26.0" prefWidth="279.0" promptText="Rechercher" style="-fx-padding: 0 0 0 28;">
+                                 <font>
+                                    <Font name="Roboto" size="14.0" />
+                                 </font>
+                              </TextField>
+                              <FontAwesomeIcon glyphName="SEARCH" layoutX="22.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                           </children></AnchorPane>
+                        <Label layoutX="14.0" layoutY="337.0" text="Nom:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="371.0" text="Prénom:">
+                           <font>
+                              <Font name="Roboto" size="14.0" />
+                           </font></Label>
+                        <Label layoutX="14.0" layoutY="405.0" text="Login:">
+                           <font>
+                              <Font name="Roboto" size="14.0" />
+                           </font></Label>
+                        <Label layoutX="14.0" layoutY="441.0" text="Mot de passe:">
+                           <font>
+                              <Font name="Roboto" size="14.0" />
+                           </font></Label>
+                        <Label layoutX="324.0" layoutY="337.0" text="Role:">
+                           <font>
+                              <Font name="Roboto" size="14.0" />
+                           </font></Label>
+                        <TextField fx:id="nomField" layoutX="109.0" layoutY="333.0" prefHeight="26.0" prefWidth="175.0" />
+                        <TextField fx:id="prenomField" layoutX="109.0" layoutY="366.0" prefHeight="26.0" prefWidth="175.0" />
+                        <TextField fx:id="loginField" layoutX="109.0" layoutY="400.0" prefHeight="26.0" prefWidth="175.0" />
+                        <ComboBox fx:id="roleComboBox" layoutX="367.0" layoutY="333.0" prefHeight="26.0" prefWidth="175.0" style="-fx-background-color: #efeeee;" />
+                        <Button fx:id="addUserBtn" alignment="CENTER" layoutX="291.0" layoutY="480.0" mnemonicParsing="false" onAction="#addUser" prefHeight="28.0" prefWidth="92.0" style="-fx-background-color: #0aec42;" text="Ajouter" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto" size="14.0" />
+                           </font></Button>
+                        <Button fx:id="updateUserBtn" alignment="CENTER" layoutX="392.0" layoutY="480.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="28.0" prefWidth="92.0" style="-fx-background-color: #0ccbec;" text="Modifier" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto" size="14.0" />
+                           </font></Button>
+                        <Button fx:id="deleteUserBtn" alignment="CENTER" layoutX="491.0" layoutY="479.0" mnemonicParsing="false" onAction="#deleteUser" prefHeight="28.0" prefWidth="92.0" style="-fx-background-color: #fc1900;" text="Supprimer" textFill="#fffffffa">
+                           <font>
+                              <Font name="Roboto" size="14.0" />
+                           </font></Button>
+                        <Button fx:id="clearFieldBtn" alignment="CENTER" layoutX="590.0" layoutY="479.0" mnemonicParsing="false" onAction="#clearFields" prefHeight="28.0" prefWidth="92.0" style="-fx-background-color: #d78305;" text="Effacer" textFill="WHITE">
+                           <font>
+                              <Font name="Roboto" size="14.0" />
+                           </font></Button>
+                        <PasswordField fx:id="passwordField" layoutX="109.0" layoutY="437.0" prefHeight="28.0" prefWidth="175.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="usersView" layoutX="258.0" layoutY="5.0" prefHeight="514.0" prefWidth="444.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 6,0,0,0);" visible="false">
+                     <children>
+                        <TableView layoutX="4.0" layoutY="11.0" prefHeight="494.0" prefWidth="435.0">
+                          <columns>
+                            <TableColumn prefWidth="47.199981689453125" text="ID" />
+                            <TableColumn prefWidth="90.199951171875" text="Nom" />
+                              <TableColumn prefWidth="76.79998779296875" text="Prénom" />
+                              <TableColumn prefWidth="71.00006103515625" text="Login" />
+                              <TableColumn prefWidth="70.800048828125" text="Role" />
+                              <TableColumn prefWidth="93.59996337890624" text="Mot de passe" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+               </children></AnchorPane>
+            <AnchorPane fx:id="updateForm" layoutX="8.0" layoutY="5.0" prefHeight="514.0" prefWidth="244.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 6,0,0,0);" visible="false">
+               <children>
+                  <Label layoutX="9.0" layoutY="66.0" text="Nom">
+                     <font>
+                        <Font name="Roboto" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="9.0" layoutY="98.0" text="Prénom">
+                     <font>
+                        <Font name="Roboto" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="9.0" layoutY="132.0" text="Login">
+                     <font>
+                        <Font name="Roboto" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="9.0" layoutY="165.0" text="Mot de passe">
+                     <font>
+                        <Font name="Roboto" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="updatedNomField" layoutX="57.0" layoutY="61.0" />
+                  <TextField fx:id="updatedPrenomField" layoutX="57.0" layoutY="93.0" />
+                  <TextField fx:id="updatedLoginField" layoutX="57.0" layoutY="127.0" />
+                  <Button layoutX="24.0" layoutY="240.0" mnemonicParsing="false" onAction="#updatedClearFields" prefHeight="28.0" prefWidth="88.0" text="Effacer" />
+                  <Button fx:id="updateUserBtn2" layoutX="126.0" layoutY="240.0" mnemonicParsing="false" onAction="#updateUser" prefHeight="28.0" prefWidth="88.0" text="Modifier" />
+                  <PasswordField fx:id="updatedPasswordField" layoutX="92.0" layoutY="160.0" />
+               </children></AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

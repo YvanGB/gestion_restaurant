@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="534.0" prefWidth="584.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rms.ui.SuiviRecettesUIController">
+
+        <ComboBox fx:id="periodeComboBox" layoutX="52.0" layoutY="98.0" onAction="#onPeriodeSelected" promptText="Sélectionnez la période">
+<!--            <items>-->
+<!--                <FXCollections fx:factory="observableArrayList">-->
+<!--                    <String fx:value="Journalière" />-->
+<!--                    <String fx:value="Hebdomadaire" />-->
+<!--                    <String fx:value="Mensuelle" />-->
+<!--                </FXCollections>-->
+<!--            </items>-->
+        </ComboBox>
+
+        <TableView fx:id="recetteTable" layoutX="52.0" layoutY="159.0" prefHeight="346.0" prefWidth="480.0">
+            <columns>
+                <TableColumn fx:id="periodeColumn" prefWidth="279.80001068115234" text="Période" />
+                <TableColumn fx:id="montantColumn" prefWidth="199.19998168945312" text="Montant Total" />
+            </columns>
+        </TableView>
+   <Pane layoutY="-1.0" prefHeight="78.0" prefWidth="602.0" style="-fx-background-color: #ff944d;">
+      <children>
+         <Label layoutX="26.0" layoutY="16.0" prefHeight="42.0" prefWidth="190.0" text="Suivi des recettes" textFill="WHITE">
+            <font>
+               <Font name="Segoe UI Black" size="22.0" />
+            </font>
+         </Label>
+         <Button fx:id="quitBtn" layoutX="532.0" layoutY="18.0" mnemonicParsing="false" onAction="#onQuit" prefHeight="33.0" prefWidth="44.0" style="-fx-background-color: #ff944d; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 6,0,0,0);">
+            <graphic>
+               <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" size="2em" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" />
+            </graphic>
+         </Button>
+      </children>
+   </Pane>
+   <ComboBox fx:id="produitComboBox" layoutX="363.0" layoutY="99.0" prefHeight="26.0" prefWidth="166.0" promptText="Sélectionnez le produit">
+<!--      <items>-->
+<!--         <FXCollections fx:factory="observableArrayList">-->
+<!--            <String fx:value="Journalière" />-->
+<!--            <String fx:value="Hebdomadaire" />-->
+<!--            <String fx:value="Mensuelle" />-->
+<!--         </FXCollections>-->
+<!--      </items>-->
+   </ComboBox>
+   <DatePicker fx:id="datePicker" layoutX="186.0" layoutY="134.0" prefHeight="26.0" prefWidth="203.0" />
+
+</AnchorPane>

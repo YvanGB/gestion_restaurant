@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="564.0" prefWidth="837.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rms.ui.OrderUIController">
+<!--    <children>-->
+<!--          <TableView fx:id="produitETable" prefHeight="100.0" prefWidth="306.0">-->
+<!--              <columns>-->
+<!--                  <TableColumn fx:id="nomColumn" prefWidth="75.0" text="Nom" />-->
+<!--                  <TableColumn fx:id="categorieColumn" prefWidth="75.0" text="Catégorie" />-->
+<!--                  <TableColumn fx:id="prixColumn" prefWidth="75.0" text="Prix" />-->
+<!--                  <TableColumn fx:id="quantiteColumn" prefWidth="75.0" text="Quantité" />-->
+<!--              </columns>-->
+<!--          </TableView>-->
+<!--          <TableView fx:id="produitATable" layoutX="393.0" prefHeight="100.0" prefWidth="288.0">-->
+<!--              <columns>-->
+<!--                  <TableColumn fx:id="nomAColumn" prefWidth="75.0" text="Nom" />-->
+<!--                  <TableColumn fx:id="categorieAColumn" prefWidth="75.0" text="Catégorie" />-->
+<!--                  <TableColumn fx:id="prixAColumn" prefWidth="75.0" text="Prix" />-->
+<!--                  <TableColumn fx:id="quantiteAColumn" prefWidth="75.0" text="Quantité" />-->
+<!--              </columns>-->
+<!--          </TableView>-->
+<!--        <DatePicker fx:id="dateHeure" layoutX="23.0" layoutY="154.0" prefWidth="150.0" />-->
+<!--        <TextField fx:id="quantite" layoutX="202.0" layoutY="154.0" prefHeight="25.0" prefWidth="50.0" />-->
+<!--        <Button layoutX="273.0" layoutY="153.0" mnemonicParsing="false" onAction="#ajouterQuantite" text="Ajouter" />-->
+<!--        <Button layoutX="328.0" layoutY="153.0" mnemonicParsing="false" onAction="#validerCommande" text="Valider" />-->
+<!--        <Button layoutX="385.0" layoutY="153.0" mnemonicParsing="false" onAction="#onRetour" text="Retour" />-->
+<!--    </children>-->
+
+    <VBox>
+        <Label text="Produit" />
+        <TableView fx:id="produitTableView" prefHeight="291.0" prefWidth="322.0">
+            <columns>
+                <TableColumn fx:id="intituleColumn" text="Intitulé" />
+                <TableColumn fx:id="descriptionColumn" text="Description" />
+                <TableColumn fx:id="prixColumn" text="Prix" />
+                <TableColumn fx:id="quantiteColumn" text="Quantité" />
+            </columns>
+        </TableView>
+        <Button fx:id="ajouterProduitButton" text="Ajouter Produit" />
+        <Label text="Commande" />
+        <TextField fx:id="montantTotalField" disable="true" promptText="Montant Total" />
+        <Button fx:id="passerCommandeButton" text="Passer la commande" />
+        <Label text="Paiement" />
+        <TextField fx:id="montantPayeField" promptText="Montant Payé" />
+        <Button fx:id="procederPaiementButton" text="Procéder au paiement" />
+    </VBox>
+
+</AnchorPane>

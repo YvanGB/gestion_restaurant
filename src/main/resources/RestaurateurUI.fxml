@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rms.ui.RestaurateurUIController">
+    <children>
+      <TableView layoutX="326.0" layoutY="114.0" prefHeight="283.0" prefWidth="706.0" AnchorPane.leftAnchor="326.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+        <ImageView fitHeight="70.0" fitWidth="141.0" layoutX="12.0" layoutY="662.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/." />
+            </image>
+        </ImageView>
+      <AnchorPane layoutY="77.0" prefHeight="656.0" prefWidth="242.0" style="-fx-background-color: orange;">
+         <children>
+              <Button layoutX="18.0" layoutY="155.0" mnemonicParsing="false" onAction="#priseDeCommandesClick" text="Prise de commandes" />
+              <Button layoutX="18.0" layoutY="212.0" mnemonicParsing="false" onAction="#enregistrementPaiementsClick" text="Enregistrement des paiements" />
+              <Button layoutX="21.0" layoutY="289.0" mnemonicParsing="false" onAction="#suiviRecettesClick" text="Suivi des recettes" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="78.0" prefWidth="1123.0" style="-fx-background-color: orange;" />
+<!--        <ComboBox fx:id="categorieCombo" layoutX="343.0" layoutY="708.0" prefWidth="202.0" />-->
+<!--        <Label layoutX="343.0" layoutY="668.0" text="Catégorie" />-->
+<!--        <TextField fx:id="nomBox" layoutX="343.0" layoutY="488.0" prefHeight="34.0" prefWidth="202.0" />-->
+<!--        <Label layoutX="343.0" layoutY="458.0" text="Nom" />-->
+<!--        <Label layoutX="601.0" layoutY="458.0" text="Prix" />-->
+<!--        <TextField fx:id="prixBox" layoutX="601.0" layoutY="488.0" prefHeight="34.0" prefWidth="202.0" />-->
+<!--        <Label layoutX="343.0" layoutY="555.0" text="Description" />-->
+<!--        <TextArea fx:id="descriptionBox" layoutX="343.0" layoutY="591.0" prefHeight="57.0" prefWidth="460.0" />-->
+<!--        <ImageView fx:id="txtImage" fitHeight="172.0" fitWidth="211.0" layoutX="881.0" layoutY="508.0" pickOnBounds="true" preserveRatio="true">-->
+<!--            <image>-->
+<!--                <Image url="@../images/." />-->
+<!--            </image>-->
+<!--        </ImageView>-->
+<!--        <TextField fx:id="quantiteBox" layoutX="601.0" layoutY="709.0" prefHeight="34.0" prefWidth="202.0" />-->
+<!--        <Label layoutX="601.0" layoutY="668.0" text="Quantité" />-->
+    </children>
+</AnchorPane>

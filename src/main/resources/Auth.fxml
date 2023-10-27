@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rms.ui.AuthUiController">
+   <children>
+      <AnchorPane prefHeight="429.0" prefWidth="600.0">
+         <children>
+            <AnchorPane layoutY="3.0" prefHeight="418.0" prefWidth="300.0" style="-fx-background-color: white;">
+               <children>
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="292.0" prefHeight="54.0" prefWidth="280.0" text="Restaurant Management System" textFill="#ff944d" textOverrun="CLIP">
+                     <font>
+                        <Font name="Segoe Print Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="image" fitHeight="236.0" fitWidth="245.0" layoutX="32.0" layoutY="48.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/resto.jpg" />
+                     </image></ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="300.0" layoutY="10.0" prefHeight="412.0" prefWidth="300.0" style="-fx-background-color: #ff944d;">
+               <children>
+                  <Label alignment="CENTER" layoutX="60.0" layoutY="45.0" prefHeight="41.0" prefWidth="180.0" text="Bienvenue" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Tahoma" size="25.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="loginField" layoutX="60.0" layoutY="136.0" prefHeight="26.0" prefWidth="180.0" promptText="Login">
+                     <font>
+                        <Font size="15.0" />
+                     </font></TextField>
+                  <Button fx:id="connectButton" contentDisplay="CENTER" layoutX="60.0" layoutY="281.0" mnemonicParsing="false" onAction="#seConnecter" prefHeight="34.0" prefWidth="180.0" style="-fx-background-color: #047fee;" text="Se connecter" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Tahoma Bold" size="13.0" />
+                     </font>
+                  </Button>
+                  <PasswordField fx:id="passwordField" layoutX="60.0" layoutY="204.0" prefHeight="31.0" prefWidth="180.0" promptText="Mot de passe">
+                     <font>
+                        <Font size="15.0" />
+                     </font></PasswordField>
+                  <Label fx:id="errorLabel" layoutX="64.0" layoutY="350.0" text="Identifiants incorrects" textFill="RED" visible="false">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
